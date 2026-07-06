@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Pablo's WDD231 course home page, showcasing web development coursework and projects.">
+    <meta name="author" content="Pablo">
+
+    <title>WDD231 Course Home Page </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="branding">
+            <img src="images/logo.svg" alt="" class="logo">
+            <span class="site-name">Pablo</span>
+        </div>
+
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </header>
+
+    <nav id="primary-nav" class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="chamber.html">Chamber</a>
+        <a href="final.html">Final</a>
+    </nav>
+
+    <main>
+        <h1 class="page-title">Home</h1>
+
+        <section class="content-grid">
+            <div class="about-box">
+                <h2>About Me</h2>
+                <p>
+                    Massa Facilisis Per Purus Si Imperdiet Curae Amet, Et Fames Lorem Mi
+                    Phasellus Congue Nascetur Enim Consectetur Sociosqu Natoque Risus,
+                    Odio Vehicula Libero Nisl Viverra Augue Commodo Pretium Vivamus At
+                    Duis Magna, Quam Fringilla Convallis Ridiculus Malesuada Accumsan
+                    Potenti Magnis Volutpat Nulla Ipsum, Dis Maecenas Et Praesent Class
+                    Fringilla.
+                </p>
+            </div>
+            <div class="photo-box">
+                <h2>Student Photo</h2>
+                <div class="photo-placeholder"></div>
+                <img src="" alt="Student Photo">
+            </div>
+        </section>
+
+        <section class="courses">
+            <h2>Web Certificate Courses</h2>
+
+            <div class="filter-buttons">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="cse">CSE</button>
+                <button class="filter" data-filter="wdd">WDD</button>
+            </div>
+
+            <div class="course-list" id="course-list">
+            </div>
+
+            <p class="credits">The total credits for course listed above is <span id="creditCount">6</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+                <img src="images/github.svg" alt="" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="" class="social-icon">
+            </a>
+            <a href="https://x.com/tu-usuario" target="_blank" aria-label="X">
+                <img src="images/x.svg" alt="" class="social-icon">
+            </a>
+        </div>
+
+        <p>&copy; <span id="currentyear"></span> Pablo, Rancagua, Chile</p>
+
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>

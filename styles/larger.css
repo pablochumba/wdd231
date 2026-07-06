@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px) {
+    .hamburger-btn {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar a {
+        padding: 10px 18px;
+    }
+
+    .content-grid {
+        flex-direction: row;
+    }
+
+    .course-list {
+        flex-direction: row;
+    }
+}

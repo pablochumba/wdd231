@@ -1,0 +1,264 @@
+/* Color variables */
+
+:root {
+    --dark-color: navy;
+    --medium-color: steelblue;
+    --light-color: aliceblue;
+    --accent-color: mediumseagreen;
+    --background-color: white;
+    --text-color: black;
+    --radius: 12px;
+    --radius-pill: 999px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-color);
+    padding: 12px 20px;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-name {
+    color: white;
+    font-weight: 600;
+}
+
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.navbar {
+    display: none;
+    flex-direction: column;
+    background-color: var(--medium-color);
+}
+
+.navbar.open {
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+
+.navbar a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    transform: scaleX(1);
+}
+
+.navbar a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-title {
+    padding: 15px 20px 5px;
+    margin: 0;
+}
+
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.about-box,
+.photo-box,
+.courses {
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.about-box {
+    flex: 2;
+}
+
+.photo-box {
+    flex: 1;
+}
+
+.about-box h2,
+.photo-box h2 {
+    background-color: var(--dark-color);
+    color: white;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+}
+
+.about-box p {
+    padding: 15px;
+    line-height: 1.5;
+}
+
+.photo-placeholder {
+    background-color: var(--light-color);
+    margin: 15px;
+    height: 160px;
+    border-radius: var(--radius);
+}
+
+.courses {
+    margin: 25px 20px;
+}
+
+.courses h2 {
+    background-color: var(--dark-color);
+    color: white;
+    margin: 0;
+    padding: 8px;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+}
+
+.filter {
+    flex: 1;
+    padding: 10px;
+    background-color: var(--light-color);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: var(--radius-pill);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.filter:hover {
+    background-color: var(--medium-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-active {
+    background-color: darkgray;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 12px 12px;
+}
+
+.course {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course.completed {
+    background-color: var(--accent-color);
+    /* mint green marks completed courses */
+    color: white;
+    font-weight: 600;
+}
+
+.course h3 {
+    margin: 0 0 5px;
+}
+
+.course p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.credits {
+    text-align: center;
+    font-size: 0.85rem;
+    margin: 0 0 12px;
+}
+
+footer {
+    background-color: whitesmoke;
+    border-top: 1px solid lightgray;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: dimgray;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 0 8px;
+}
+
+.social-icons a {
+    color: dimgray;
+    text-decoration: none;
+}
+
+footer p {
+    margin: 2px 0;
+}
