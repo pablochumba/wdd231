@@ -77,6 +77,7 @@ function displayCourses(courseArray) {
             <h3>${course.subject} ${course.number}</h3>
             <p>${course.title}</p>
             <p>${course.credits} credits</p>
+            <p class="course-status">${course.completed ? "Completed" : "In Progress"}</p>
         `;
 
         courseList.appendChild(card);
@@ -96,6 +97,13 @@ const filterButtons = document.querySelectorAll(".filter");
 filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         const category = button.dataset.filter; // "all", "cse", or "wdd"
+
+        filterButtons.forEach(function (filterButton) {
+            filterButton.classList.remove("active");
+            filterButton.setAttribute("aria-pressed", "false");
+        });
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
 
         let filteredCourses;
 

@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
@@ -60,8 +61,7 @@
             </div>
             <div class="photo-box">
                 <h2>Student Photo</h2>
-                <div class="photo-placeholder"></div>
-                <img src="" alt="Student Photo">
+                <img src="images/student-photo.webp" alt="Pablo student portrait" width="200" height="200">
             </div>
         </section>
 
@@ -69,28 +69,28 @@
             <h2>Web Certificate Courses</h2>
 
             <div class="filter-buttons">
-                <button class="filter active" data-filter="all">All</button>
-                <button class="filter" data-filter="cse">CSE</button>
-                <button class="filter" data-filter="wdd">WDD</button>
+                <button type="button" class="filter active" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="filter" data-filter="cse" aria-pressed="false">CSE</button>
+                <button type="button" class="filter" data-filter="wdd" aria-pressed="false">WDD</button>
             </div>
 
             <div class="course-list" id="course-list">
             </div>
 
-            <p class="credits">The total credits for course listed above is <span id="creditCount">6</span></p>
+            <p class="credits">The total credits for courses listed above is <span id="creditCount">0</span>.</p>
         </section>
     </main>
 
     <footer>
         <div class="social-icons">
-            <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/pablochumba" target="_blank" rel="noopener" aria-label="GitHub">
                 <img src="images/github.svg" alt="" class="social-icon">
             </a>
-            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/pablochumba" target="_blank" rel="noopener" aria-label="LinkedIn">
                 <img src="images/linkedin.svg" alt="" class="social-icon">
             </a>
-            <a href="https://x.com/tu-usuario" target="_blank" aria-label="X">
-                <img src="images/x.svg" alt="" class="social-icon">
+            <a href="https://www.instagram.com/_pablochumba" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="images/instagram.svg" alt="" class="social-icon">
             </a>
         </div>
 

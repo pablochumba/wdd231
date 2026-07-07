@@ -1,14 +1,14 @@
 /* Color variables */
 
 :root {
-    --dark-color: navy;
-    --medium-color: steelblue;
-    --light-color: aliceblue;
-    --accent-color: mediumseagreen;
+    --dark-color: #182b49;
+    --medium-color: #2f6792;
+    --light-color: #eef6fb;
+    --accent-color: #1f7a4d;
     --background-color: white;
-    --text-color: black;
-    --radius: 12px;
-    --radius-pill: 999px;
+    --text-color: #171717;
+    --muted-color: #555;
+    --radius: 8px;
 }
 
 * {
@@ -28,6 +28,11 @@ header {
     align-items: center;
     background-color: var(--dark-color);
     padding: 12px 20px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .branding {
@@ -91,7 +96,7 @@ header {
 }
 
 .navbar a:hover {
-    color: var(--accent-color);
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -147,10 +152,17 @@ header {
     line-height: 1.5;
 }
 
-.photo-placeholder {
-    background-color: var(--light-color);
-    margin: 15px;
-    height: 160px;
+.photo-box {
+    text-align: center;
+}
+
+.photo-box img {
+    display: block;
+    width: min(220px, calc(100% - 30px));
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    margin: 15px auto;
     border-radius: var(--radius);
 }
 
@@ -176,9 +188,9 @@ header {
     flex: 1;
     padding: 10px;
     background-color: var(--light-color);
-    border: none;
+    border: 1px solid #bdd2e0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius);
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
@@ -190,8 +202,9 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.filter-active {
-    background-color: darkgray;
+.filter.active {
+    background-color: var(--dark-color);
+    color: white;
 }
 
 .course-list {
@@ -206,14 +219,13 @@ header {
     text-align: center;
     padding: 8px;
     background-color: whitesmoke;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: var(--radius);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .course.completed {
     background-color: var(--accent-color);
-    /* mint green marks completed courses */
     color: white;
     font-weight: 600;
 }
@@ -225,6 +237,11 @@ header {
 .course p {
     margin: 0;
     font-size: 0.85rem;
+}
+
+.course-status {
+    margin-top: 6px;
+    font-weight: 700;
 }
 
 .credits {
@@ -239,7 +256,7 @@ footer {
     text-align: center;
     padding: 15px;
     font-size: 0.8rem;
-    color: dimgray;
+    color: var(--muted-color);
 }
 
 .social-icon {
