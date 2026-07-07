@@ -5,7 +5,7 @@
     --medium-color: #2f6792;
     --light-color: #eef6fb;
     --accent-color: #1f7a4d;
-    --background-color: white;
+    --background-color: #fff;
     --text-color: #171717;
     --muted-color: #555;
     --radius: 8px;
@@ -42,7 +42,7 @@ main {
 }
 
 .site-name {
-    color: white;
+    color: #fff;
     font-weight: 600;
 }
 
@@ -60,7 +60,7 @@ main {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: #fff;
 }
 
 .navbar {
@@ -74,7 +74,7 @@ main {
 }
 
 .navbar a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     padding: 14px 20px;
     position: relative;
@@ -96,7 +96,7 @@ main {
 }
 
 .navbar a:hover {
-    color: white;
+    color: #fff;
     transform: translateY(-2px);
 }
 
@@ -106,7 +106,7 @@ main {
 }
 
 .navbar a.active {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: #0f1d32;
 }
 
 .page-title {
@@ -136,12 +136,13 @@ main {
 
 .photo-box {
     flex: 1;
+    text-align: center;
 }
 
 .about-box h2,
 .photo-box h2 {
     background-color: var(--dark-color);
-    color: white;
+    color: #fff;
     margin: 0;
     padding: 8px;
     text-align: center;
@@ -150,10 +151,6 @@ main {
 .about-box p {
     padding: 15px;
     line-height: 1.5;
-}
-
-.photo-box {
-    text-align: center;
 }
 
 .photo-box img {
@@ -172,7 +169,7 @@ main {
 
 .courses h2 {
     background-color: var(--dark-color);
-    color: white;
+    color: #fff;
     margin: 0;
     padding: 8px;
     text-align: center;
@@ -197,14 +194,14 @@ main {
 
 .filter:hover {
     background-color: var(--medium-color);
-    color: white;
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .filter.active {
     background-color: var(--dark-color);
-    color: white;
+    color: #fff;
 }
 
 .course-list {
@@ -226,7 +223,7 @@ main {
 
 .course.completed {
     background-color: var(--accent-color);
-    color: white;
+    color: #fff;
     font-weight: 600;
 }
 
