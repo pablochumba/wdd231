@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Rancagua Chamber of Commerce business directory for local services, shops, and community partners.">
+    <meta name="author" content="Pablo Chumba">
+
+    <meta property="og:title" content="Rancagua Chamber of Commerce Directory">
+    <meta property="og:description"
+        content="Find trusted Rancagua businesses, services, and chamber members in one local directory.">
+    <meta property="og:image" content="https://pablochumba.github.io/wdd231/chamber/images/social-preview.svg">
+    <meta property="og:url" content="https://pablochumba.github.io/wdd231/chamber/directory.html">
+    <meta property="og:type" content="website">
+
+    <title>Directory | Rancagua Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="site-branding">
+            <a class="brand-link" href="directory.html" aria-label="Rancagua Chamber of Commerce home">
+                <img src="images/logo.svg" alt="" width="64" height="64">
+                <span>
+                    <strong>Rancagua</strong>
+                    <small>Chamber of Commerce</small>
+                </span>
+            </a>
+        </div>
+        <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false"
+            aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav id="primary-nav" class="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="directory.html" class="active">Directory</a>
+        <a href="discover.html">Discover</a>
+        <a href="join.html">Join</a>
+    </nav>
+
+    <main>
+        <section class="page-heading">
+            <p class="eyebrow">Local Business Network</p>
+            <h1>Member Directory</h1>
+            <p>
+                Explore chamber members serving Rancagua and the Cachapoal Valley through retail, food, technology,
+                health, hospitality, and professional services.
+            </p>
+        </section>
+
+        <section class="directory-panel" aria-labelledby="directory-title">
+            <div class="directory-toolbar">
+                <div>
+                    <h2 id="directory-title">Rancagua Businesses</h2>
+                    <p id="member-count">Loading members...</p>
+                </div>
+                <div class="view-toggle" aria-label="Choose directory layout">
+                    <button id="grid-view" class="view-button active" type="button" aria-pressed="true">Grid</button>
+                    <button id="list-view" class="view-button" type="button" aria-pressed="false">List</button>
+                </div>
+            </div>
+
+            <div id="members" class="members-grid" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <p><strong>Rancagua Chamber of Commerce</strong></p>
+            <p>Av. Libertador Bernardo O'Higgins 325, Rancagua, Chile</p>
+            <p>info@rancaguachamber.cl | +56 72 222 4510</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="images/facebook.svg" alt="" width="32" height="32">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="" width="32" height="32">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="images/instagram.svg" alt="" width="32" height="32">
+            </a>
+        </div>
+        <div class="footer-dev">
+            <p>&copy; <span id="currentyear"></span> Rancagua Chamber of Commerce</p>
+            <p>Pablo Chumba | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+
+</html>

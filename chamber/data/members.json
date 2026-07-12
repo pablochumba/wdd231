@@ -1,0 +1,67 @@
+{
+    "members": [
+        {
+            "name": "Cachapoal Coffee Roasters",
+            "address": "Campos 441, Rancagua, Chile",
+            "phone": "+56 72 221 1400",
+            "website": "https://example.com/cachapoal-coffee",
+            "image": "cachapoal-coffee.svg",
+            "membershipLevel": 3,
+            "description": "Small-batch coffee roaster serving cafes, offices, and neighborhood customers."
+        },
+        {
+            "name": "Libertador Tech Studio",
+            "address": "Av. Libertador Bernardo O'Higgins 972, Rancagua, Chile",
+            "phone": "+56 72 233 8821",
+            "website": "https://example.com/libertador-tech",
+            "image": "libertador-tech.svg",
+            "membershipLevel": 2,
+            "description": "Web design, app support, and digital consulting for local entrepreneurs."
+        },
+        {
+            "name": "Andes Family Clinic",
+            "address": "German Riesco 312, Rancagua, Chile",
+            "phone": "+56 72 245 6709",
+            "website": "https://example.com/andes-clinic",
+            "image": "andes-clinic.svg",
+            "membershipLevel": 3,
+            "description": "Primary care clinic offering family medicine, prevention, and wellness services."
+        },
+        {
+            "name": "Plaza Centro Books",
+            "address": "Independencia 587, Rancagua, Chile",
+            "phone": "+56 72 218 9345",
+            "website": "https://example.com/plaza-centro-books",
+            "image": "plaza-books.svg",
+            "membershipLevel": 1,
+            "description": "Independent bookstore with school supplies, Chilean literature, and community readings."
+        },
+        {
+            "name": "O'Higgins Event Hall",
+            "address": "Miguel Ramirez 1180, Rancagua, Chile",
+            "phone": "+56 72 228 4517",
+            "website": "https://example.com/ohiggins-events",
+            "image": "ohiggins-events.svg",
+            "membershipLevel": 2,
+            "description": "Flexible event venue for workshops, chamber meetings, and business celebrations."
+        },
+        {
+            "name": "Rancagua Solar Works",
+            "address": "Carretera El Cobre 1505, Rancagua, Chile",
+            "phone": "+56 72 236 5074",
+            "website": "https://example.com/rancagua-solar",
+            "image": "rancagua-solar.svg",
+            "membershipLevel": 3,
+            "description": "Solar panel installation and energy audits for homes, farms, and small businesses."
+        },
+        {
+            "name": "Mercado Fresh Logistics",
+            "address": "Ruta H-30 2040, Rancagua, Chile",
+            "phone": "+56 72 251 8088",
+            "website": "https://example.com/mercado-fresh",
+            "image": "mercado-fresh.svg",
+            "membershipLevel": 1,
+            "description": "Cold-chain delivery and storage services for regional growers and food retailers."
+        }
+    ]
+}
