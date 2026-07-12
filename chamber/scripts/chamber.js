@@ -7,6 +7,7 @@ menuButton.addEventListener("click", () => {
     primaryNav.classList.toggle("open");
     const isOpen = primaryNav.classList.contains("open");
     menuButton.setAttribute("aria-expanded", isOpen);
+    menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
 });
 
 currentYear.textContent = new Date().getFullYear();
