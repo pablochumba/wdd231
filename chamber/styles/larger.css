@@ -21,6 +21,29 @@
         padding: 1.5rem 2rem;
     }
 
+    .hero,
+    .hero-content {
+        min-height: 420px;
+    }
+
+    .hero-content {
+        padding: 3rem;
+    }
+
+    .home-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .spotlights {
+        margin-top: 1.5rem;
+    }
+
+    .spotlight-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .page-heading h1 {
         font-size: 2.5rem;
     }
