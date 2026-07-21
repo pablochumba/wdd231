@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadatos esenciales: codificación, responsive, descripción y autor. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Get Better at Guitar with personalized lessons. Learn from an experienced instructor and improve your skills.">
+    <meta name="author" content="Get Better">
+
+    <!-- Google Fonts: preconnect reduce parte de la espera antes de descargar las fuentes. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Orden CSS: normalización, base mobile-first y ajustes desde 768px. -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
+
+    <!-- defer ejecuta JavaScript después de que el navegador interpreta el HTML. -->
+    <script src="scripts/theme.js" defer></script>
+    <title>Get Better</title>
+</head>
+
+<body>
+
+    <!-- Header: identidad del sitio, navegación principal y preferencias visuales. -->
+    <header>
+        <div class="container">
+            <a class="site-name" href="#home">Get better</a>
+
+            <div class="header-actions">
+                <!-- Los href internos deben coincidir con un id existente en la página. -->
+                <nav>
+                    <ul>
+                        <li><a href="#lessons">Lessons</a></li>
+                        <li><a href="#instructor">About Me</a></li>
+                        <li><a href="#booking">How It Works</a></li>
+                        <li><a class="nav-cta" href="#contact">Book a Lesson</a></li>
+                    </ul>
+                </nav>
+
+                <!--
+                    Comparación didáctica: button usa click + aria-pressed;
+                    checkbox usa change + checked. En producción normalmente se elige uno.
+                -->
+                <button class="theme-button" type="button" aria-pressed="false">
+                    Dark Theme
+                </button>
+
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle">Dark Theme</label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero: contiene el único h1 y la llamada principal a la acción. -->
+        <section id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome</h1>
+                    <p>Are you ready to "Get Better" at Guitar?</p>
+                    <a class="button" href="#contact">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección temática identificada para navegación interna. -->
+        <section id="instructor">
+            <div class="container">
+                <h2>Instructor</h2>
+                <p>Introduction. Experience.</p>
+            </div>
+        </section>
+
+        <!-- Sección temática identificada para navegación interna. -->
+        <section id="lessons">
+            <div class="container">
+                <h2>My Lessons</h2>
+                <p>Lessons for all skill levels.</p>
+            </div>
+        </section>
+
+        <!-- Proceso: .steps-grid controla el layout y cada .step representa una tarjeta. -->
+        <section id="booking">
+            <div class="container">
+                <h2>Book Your Lesson</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <h3>Step 1: Choose Your Lesson and Schedule</h3>
+                        <p>Choose between individual or group lessons.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>Step 2: Tell Me About Yourself</h3>
+                        <p>Enter your contact information.</p>
+                    </div>
+
+                    <div class="step">
+                        <h3>Step 3: Confirm Your Booking</h3>
+                        <p>Review the details and confirm your booking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario: cada label se conecta al control cuyo id coincide con su for. -->
+        <section id="contact">
+            <div class="container">
+                <h2>Book a Lesson</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lesson-type">Lesson Type:</label>
+                        <select id="lesson-type" name="lesson-type" required>
+                            <option value="" disabled selected>Select a lesson type</option>
+                            <option value="individual">Individual Lesson</option>
+                            <option value="group">Group Lesson</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goals">Your Goals:</label>
+                        <textarea id="goals" name="goals" rows="4" required
+                            placeholder="Tell me what you would like to learn..."></textarea>
+                    </div>
+
+                    <button class="button" type="submit">Book a Lesson</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer fuera de main: información final que pertenece al sitio completo. -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Get Better. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+/*
+ * Este archivo se carga desde 768px mediante el atributo media del <link>.
+ * Solo contiene diferencias respecto de small.css; no repite la base.
+ * Los números coinciden con las secciones equivalentes de small.css.
+ */
+
+/* 5. Header de escritorio: marca y acciones comparten una fila. */
+header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-name,
+header nav {
+    align-self: center;
+}
+
+header ul {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-small);
+}
+
+/* 5.1 Navegación y controles de tema pasan de columna a fila. */
+.header-actions {
+    flex-direction: row;
+    align-items: center;
+}
+
+/* 6. Hero: escala tipográfica mayor para aprovechar el escritorio. */
+#home h1 {
+    font-size: 4rem;
+}
+
+#home p {
+    font-size: 1.5rem;
+}
+
+/* 7. Pasos: una columna móvil pasa a tres columnas iguales. */
+.steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+}

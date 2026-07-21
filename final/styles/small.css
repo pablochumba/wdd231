@@ -1,0 +1,323 @@
+/*
+ * ÍNDICE
+ * 1. Design tokens y temas
+ * 2. Reset y estilos base
+ * 3. Layout y componentes reutilizables
+ * 4. Ritmo y superficies compartidas
+ * 5. Header, navegación y controles de tema
+ * 6. Hero
+ * 7. Pasos de reserva
+ * 8. Formulario
+ */
+
+/* 1. Design tokens del tema claro: centralizan decisiones reutilizables. */
+:root {
+    --color-success: #2cff05;
+    --color-text: #000000;
+    --color-field-background: #ffffff;
+    --color-page-background: #f7f7f2;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f1f5e6;
+    --color-header-background: #000000;
+    --color-header-text: #ccff00;
+    --color-heading: #000000;
+    --color-action: #ccff00;
+    --color-on-action: #000000;
+    --color-action-hover: #ffff00;
+    --color-focus: #bf00ff;
+    --color-border: #dfff00;
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    --space-small: 1rem;
+    --space-medium: 2rem;
+    --space-large: 3rem;
+    --space-xlarge: 6rem;
+}
+
+/* 1.1 Tema oscuro: data-theme en <html> sobrescribe solo los colores. */
+[data-theme="dark"] {
+    --color-page-background: #000000;
+    --color-surface: #2d2d2d;
+    --color-surface-soft: #1a1a1a;
+    --color-text: #f5f5f5;
+    --color-header-background: #2d2d2d;
+    --color-header-text: #2cff05;
+    --color-heading: #2cff05;
+    --color-action: #bf00ff;
+    --color-on-action: #000000;
+    --color-action-hover: #2cff05;
+    --color-focus: #2cff05;
+    --color-border: #2cff05;
+    --color-field-background: #2d2d2d;
+    --color-success: #2cff05;
+}
+
+/* 2. Reset: padding y border quedan dentro del ancho declarado. */
+* {
+    box-sizing: border-box;
+}
+
+/* 2.1 Base heredada: tipografía, fondo, texto y altura de línea. */
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--color-page-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+/* 3. Layout reutilizable: limita líneas largas y centra el contenido. */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+/* 3.1 Botón reutilizable: comparte apariencia, no cambia la semántica HTML. */
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 0;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--color-action);
+    color: var(--color-on-action);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-action-hover);
+    color: var(--color-on-action);
+}
+
+.button:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+/* 4. Ritmo y superficies compartidas de las secciones principales. */
+#home {
+    padding-block: var(--space-xlarge);
+}
+
+#instructor,
+#lessons {
+    padding-block: var(--space-large);
+}
+
+#booking {
+    padding-block: var(--space-xlarge);
+}
+
+#contact {
+    padding-block: var(--space-large);
+}
+
+footer {
+    padding-block: var(--space-medium);
+}
+
+#home,
+#contact {
+    background-color: var(--color-surface-soft);
+}
+
+/* 5. Header móvil: marca a la izquierda y acciones a la derecha. */
+.site-name {
+    align-self: flex-start;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    padding-block: var(--space-small);
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+}
+
+header nav {
+    align-self: flex-end;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+header,
+footer {
+    background-color: var(--color-header-background);
+    color: var(--color-header-text);
+}
+
+header nav a {
+    display: block;
+    padding: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-cta {
+    padding-inline: 1rem;
+    background-color: var(--color-action);
+    color: var(--color-on-action);
+    border-radius: 0.25rem;
+    text-decoration: none;
+}
+
+header nav a:not(.nav-cta):hover {
+    background-color: var(--color-surface-soft);
+    color: var(--color-text);
+    border-radius: 0.25rem;
+}
+
+.nav-cta:hover {
+    background-color: var(--color-action-hover);
+    color: var(--color-on-action);
+}
+
+header a:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+/* 5.1 Acciones del header: large.css cambia column por row. */
+.header-actions {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-small);
+}
+
+/* 5.2 Selector de tema con button: currentColor reutiliza el color del texto. */
+.theme-button {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid currentColor;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    background-color: var(--color-header-text);
+    color: var(--color-header-background);
+}
+
+.theme-button:focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
+}
+
+/* 5.3 Selector con checkbox: después se convertirá en un switch visual. */
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 6. Hero: limita el ancho de lectura y crea jerarquía tipográfica. */
+.hero-content {
+    max-width: 40rem;
+}
+
+#home h1 {
+    margin-block: 0 var(--space-small);
+    font-size: 3rem;
+    color: var(--color-heading);
+}
+
+#home p {
+    margin-block: 0 var(--space-medium);
+    font-size: 1.25rem;
+}
+
+/* 7. Pasos: una columna móvil; large.css cambia el Grid a tres columnas. */
+.steps-grid {
+    display: grid;
+    gap: var(--space-medium);
+}
+
+.step {
+    padding: var(--space-medium);
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 0.25rem;
+}
+
+.step h3 {
+    margin-block: 0 var(--space-small);
+    color: var(--color-heading);
+}
+
+.step p {
+    margin: 0;
+}
+
+/* 8. Formulario: grupos verticales, controles consistentes y foco visible. */
+form {
+    display: grid;
+    gap: var(--space-small);
+    max-width: 40rem;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--color-text);
+    background-color: var(--color-field-background);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-focus);
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
