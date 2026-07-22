@@ -1,11 +1,11 @@
-// Referencias al DOM: guardan los controles para reutilizarlos sin buscarlos otra vez.
+// DOM references: store the controls so they can be reused without querying again.
 const themeButton = document.querySelector(".theme-button");
 const themeCheckbox = document.querySelector("#theme-toggle");
 
-// Preferencia persistida: getItem devuelve "dark", "light" o null.
+// Persisted preference: getItem returns "dark", "light", or null.
 const savedTheme = localStorage.getItem("theme");
 
-// Aplica el tema oscuro y sincroniza HTML, ambos controles y localStorage.
+// Applies the dark theme and synchronizes the HTML, both controls, and localStorage.
 function applyDarkTheme() {
     document.documentElement.setAttribute("data-theme", "dark");
     themeButton.setAttribute("aria-pressed", "true");
@@ -14,7 +14,7 @@ function applyDarkTheme() {
     localStorage.setItem("theme", "dark");
 }
 
-// Restaura el tema claro predeterminado y sincroniza todos los estados relacionados.
+// Restores the default light theme and synchronizes all related states.
 function applyLightTheme() {
     document.documentElement.removeAttribute("data-theme");
     themeButton.setAttribute("aria-pressed", "false");
@@ -23,12 +23,12 @@ function applyLightTheme() {
     localStorage.setItem("theme", "light");
 }
 
-// Al cargar, restaura oscuro solo si esa fue la preferencia guardada.
+// On load, restores dark mode only when it was the saved preference.
 if (savedTheme === "dark") {
     applyDarkTheme();
 }
 
-// Button: click consulta data-theme y aplica el estado contrario.
+// Button: click checks data-theme and applies the opposite state.
 themeButton.addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
 
@@ -39,7 +39,7 @@ themeButton.addEventListener("click", () => {
     }
 });
 
-// Checkbox: change ocurre después de que el navegador actualiza la propiedad checked.
+// Checkbox: change fires after the browser updates the checked property.
 themeCheckbox.addEventListener("change", () => {
     if (themeCheckbox.checked) {
         applyDarkTheme();

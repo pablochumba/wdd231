@@ -1,16 +1,16 @@
 /*
- * ÍNDICE
- * 1. Design tokens y temas
- * 2. Reset y estilos base
- * 3. Layout y componentes reutilizables
- * 4. Ritmo y superficies compartidas
- * 5. Header, navegación y controles de tema
+ * TABLE OF CONTENTS
+ * 1. Design tokens and themes
+ * 2. Reset and base styles
+ * 3. Layout and reusable components
+ * 4. Shared spacing and surfaces
+ * 5. Header, navigation, and theme controls
  * 6. Hero
- * 7. Pasos de reserva
- * 8. Formulario
+ * 7. Booking steps
+ * 8. Form
  */
 
-/* 1. Design tokens del tema claro: centralizan decisiones reutilizables. */
+/* 1. Light-theme design tokens: centralize reusable decisions. */
 :root {
     --color-success: #2cff05;
     --color-text: #000000;
@@ -36,7 +36,7 @@
     --space-xlarge: 6rem;
 }
 
-/* 1.1 Tema oscuro: data-theme en <html> sobrescribe solo los colores. */
+/* 1.1 Dark theme: data-theme on <html> overrides only the colors. */
 [data-theme="dark"] {
     --color-page-background: #000000;
     --color-surface: #2d2d2d;
@@ -54,12 +54,12 @@
     --color-success: #2cff05;
 }
 
-/* 2. Reset: padding y border quedan dentro del ancho declarado. */
+/* 2. Reset: padding and borders remain within the declared width. */
 * {
     box-sizing: border-box;
 }
 
-/* 2.1 Base heredada: tipografía, fondo, texto y altura de línea. */
+/* 2.1 Inherited base: typography, background, text, and line height. */
 body {
     margin: 0;
     font-family: var(--font-body);
@@ -75,14 +75,14 @@ h3 {
     line-height: 1.2;
 }
 
-/* 3. Layout reutilizable: limita líneas largas y centra el contenido. */
+/* 3. Reusable layout: limits long lines and centers the content. */
 .container {
     max-width: 1200px;
     margin-inline: auto;
     padding-inline: 1rem;
 }
 
-/* 3.1 Botón reutilizable: comparte apariencia, no cambia la semántica HTML. */
+/* 3.1 Reusable button: shares appearance without changing HTML semantics. */
 .button {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -107,7 +107,7 @@ h3 {
     outline-offset: 3px;
 }
 
-/* 4. Ritmo y superficies compartidas de las secciones principales. */
+/* 4. Shared spacing and surfaces for the main sections. */
 #home {
     padding-block: var(--space-xlarge);
 }
@@ -134,7 +134,7 @@ footer {
     background-color: var(--color-surface-soft);
 }
 
-/* 5. Header móvil: marca a la izquierda y acciones a la derecha. */
+/* 5. Mobile header: brand on the left and actions on the right. */
 .site-name {
     align-self: flex-start;
     font-family: var(--font-heading);
@@ -204,7 +204,7 @@ header a:focus-visible {
     outline-offset: 3px;
 }
 
-/* 5.1 Acciones del header: large.css cambia column por row. */
+/* 5.1 Header actions: large.css changes column to row. */
 .header-actions {
     align-self: flex-end;
     display: flex;
@@ -213,7 +213,7 @@ header a:focus-visible {
     gap: var(--space-small);
 }
 
-/* 5.2 Selector de tema con button: currentColor reutiliza el color del texto. */
+/* 5.2 Button theme control: currentColor reuses the text color. */
 .theme-button {
     padding: 0.5rem 0.75rem;
     border: 2px solid currentColor;
@@ -236,14 +236,14 @@ header a:focus-visible {
     outline-offset: 3px;
 }
 
-/* 5.3 Selector con checkbox: después se convertirá en un switch visual. */
+/* 5.3 Checkbox theme control: it will later become a visual switch. */
 .theme-switch {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-/* 6. Hero: limita el ancho de lectura y crea jerarquía tipográfica. */
+/* 6. Hero: limits reading width and creates typographic hierarchy. */
 .hero-content {
     max-width: 40rem;
 }
@@ -259,7 +259,7 @@ header a:focus-visible {
     font-size: 1.25rem;
 }
 
-/* 7. Pasos: una columna móvil; large.css cambia el Grid a tres columnas. */
+/* 7. Steps: one mobile column; large.css changes the grid to three columns. */
 .steps-grid {
     display: grid;
     gap: var(--space-medium);
@@ -281,7 +281,7 @@ header a:focus-visible {
     margin: 0;
 }
 
-/* 8. Formulario: grupos verticales, controles consistentes y foco visible. */
+/* 8. Form: vertical groups, consistent controls, and visible focus. */
 form {
     display: grid;
     gap: var(--space-small);

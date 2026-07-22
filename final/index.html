@@ -2,38 +2,38 @@
 <html lang="en">
 
 <head>
-    <!-- Metadatos esenciales: codificación, responsive, descripción y autor. -->
+    <!-- Essential metadata: character encoding, responsive viewport, description, and author. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Get Better at Guitar with personalized lessons. Learn from an experienced instructor and improve your skills.">
     <meta name="author" content="Get Better">
 
-    <!-- Google Fonts: preconnect reduce parte de la espera antes de descargar las fuentes. -->
+    <!-- Google Fonts: preconnect reduces some of the wait before downloading the fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Orden CSS: normalización, base mobile-first y ajustes desde 768px. -->
+    <!-- CSS order: normalization, mobile-first base, and adjustments from 768px. -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
 
-    <!-- defer ejecuta JavaScript después de que el navegador interpreta el HTML. -->
+    <!-- defer runs JavaScript after the browser parses the HTML. -->
     <script src="scripts/theme.js" defer></script>
     <title>Get Better</title>
 </head>
 
 <body>
 
-    <!-- Header: identidad del sitio, navegación principal y preferencias visuales. -->
+    <!-- Header: site identity, primary navigation, and visual preferences. -->
     <header>
         <div class="container">
             <a class="site-name" href="#home">Get better</a>
 
             <div class="header-actions">
-                <!-- Los href internos deben coincidir con un id existente en la página. -->
+                <!-- Internal href values must match an existing id on the page. -->
                 <nav>
                     <ul>
                         <li><a href="#lessons">Lessons</a></li>
@@ -44,8 +44,8 @@
                 </nav>
 
                 <!--
-                    Comparación didáctica: button usa click + aria-pressed;
-                    checkbox usa change + checked. En producción normalmente se elige uno.
+                    Learning comparison: the button uses click + aria-pressed;
+                    the checkbox uses change + checked. Production sites normally use one.
                 -->
                 <button class="theme-button" type="button" aria-pressed="false">
                     Dark Theme
@@ -60,7 +60,7 @@
     </header>
 
     <main>
-        <!-- Hero: contiene el único h1 y la llamada principal a la acción. -->
+        <!-- Hero: contains the only h1 and the primary call to action. -->
         <section id="home">
             <div class="container">
                 <div class="hero-content">
@@ -71,7 +71,7 @@
             </div>
         </section>
 
-        <!-- Sección temática identificada para navegación interna. -->
+        <!-- Topic section identified for internal navigation. -->
         <section id="instructor">
             <div class="container">
                 <h2>Instructor</h2>
@@ -79,7 +79,7 @@
             </div>
         </section>
 
-        <!-- Sección temática identificada para navegación interna. -->
+        <!-- Topic section identified for internal navigation. -->
         <section id="lessons">
             <div class="container">
                 <h2>My Lessons</h2>
@@ -87,7 +87,7 @@
             </div>
         </section>
 
-        <!-- Proceso: .steps-grid controla el layout y cada .step representa una tarjeta. -->
+        <!-- Process: .steps-grid controls the layout and each .step represents a card. -->
         <section id="booking">
             <div class="container">
                 <h2>Book Your Lesson</h2>
@@ -110,7 +110,7 @@
             </div>
         </section>
 
-        <!-- Formulario: cada label se conecta al control cuyo id coincide con su for. -->
+        <!-- Form: each label connects to the control whose id matches its for attribute. -->
         <section id="contact">
             <div class="container">
                 <h2>Book a Lesson</h2>
@@ -146,7 +146,7 @@
         </section>
     </main>
 
-    <!-- Footer fuera de main: información final que pertenece al sitio completo. -->
+    <!-- Footer outside main: closing information that belongs to the entire site. -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Get Better. All rights reserved.</p>
