@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Confirmation of a membership application submitted to the Rancagua Chamber of Commerce.">
+    <meta name="author" content="Pablo Chumba">
+
+    <meta property="og:title" content="Application Received | Rancagua Chamber of Commerce">
+    <meta property="og:description" content="Thank you for applying to join the Rancagua Chamber of Commerce.">
+    <meta property="og:image" content="https://pablochumba.github.io/wdd231/chamber/images/social-preview.svg">
+    <meta property="og:url" content="https://pablochumba.github.io/wdd231/chamber/thankyou.html">
+    <meta property="og:type" content="website">
+
+    <title>Application Received | Rancagua Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="site-branding">
+            <a class="brand-link" href="index.html" aria-label="Rancagua Chamber of Commerce home">
+                <img src="images/logo.svg" alt="" width="64" height="64">
+                <span>
+                    <strong>Rancagua</strong>
+                    <small>Chamber of Commerce</small>
+                </span>
+            </a>
+        </div>
+        <button id="menu-button" class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false"
+            aria-controls="primary-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <nav id="primary-nav" class="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="discover.html">Discover</a>
+        <a href="join.html" class="active">Join</a>
+    </nav>
+
+    <main>
+        <section class="thankyou-panel" aria-labelledby="thankyou-title">
+            <p class="eyebrow">Application Received</p>
+            <h1 id="thankyou-title">Thank You for Joining Us</h1>
+            <p class="thankyou-intro">
+                We received your membership application. A chamber representative will contact you soon.
+            </p>
+
+            <dl class="submitted-details">
+                <dt>First Name</dt>
+                <dd id="submitted-first-name"></dd>
+                <dt>Last Name</dt>
+                <dd id="submitted-last-name"></dd>
+                <dt>Email</dt>
+                <dd id="submitted-email"></dd>
+                <dt>Mobile Phone</dt>
+                <dd id="submitted-phone"></dd>
+                <dt>Organization</dt>
+                <dd id="submitted-organization"></dd>
+                <dt>Submitted</dt>
+                <dd id="submitted-timestamp"></dd>
+            </dl>
+
+            <a class="return-link" href="index.html">Return to Home</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact">
+            <p><strong>Rancagua Chamber of Commerce</strong></p>
+            <p>Av. Libertador Bernardo O'Higgins 325, Rancagua, Chile</p>
+            <p>info@rancaguachamber.cl | +56 72 222 4510</p>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="images/facebook.svg" alt="" width="32" height="32">
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="images/linkedin.svg" alt="" width="32" height="32">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="images/instagram.svg" alt="" width="32" height="32">
+            </a>
+        </div>
+        <div class="footer-dev">
+            <p>&copy; <span id="currentyear"></span> Rancagua Chamber of Commerce</p>
+            <p>Pablo Chumba | WDD 231</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+
+</html>

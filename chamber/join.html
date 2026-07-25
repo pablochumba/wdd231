@@ -4,8 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rancagua Chamber of Commerce join page placeholder.">
+    <meta name="description"
+        content="Apply to join the Rancagua Chamber of Commerce and select the membership level that fits your organization.">
     <meta name="author" content="Pablo Chumba">
+
+    <meta property="og:title" content="Join the Rancagua Chamber of Commerce">
+    <meta property="og:description"
+        content="Connect your organization with Rancagua's business community through chamber membership.">
+    <meta property="og:image" content="https://pablochumba.github.io/wdd231/chamber/images/social-preview.svg">
+    <meta property="og:url" content="https://pablochumba.github.io/wdd231/chamber/join.html">
+    <meta property="og:type" content="website">
+
     <title>Join | Rancagua Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
@@ -16,8 +25,11 @@
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/join.css">
     <link rel="stylesheet" href="styles/larger.css">
+
     <script src="scripts/chamber.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
@@ -48,11 +60,178 @@
 
     <main>
         <section class="page-heading">
-            <p class="eyebrow">Coming Soon</p>
+            <p class="eyebrow">Grow With Our Community</p>
             <h1>Join the Chamber</h1>
-            <p>This page will include membership forms and benefits in a future chamber assignment.</p>
+            <p>Tell us about your organization and choose the membership level that best supports your goals.</p>
         </section>
+
+        <div class="join-layout">
+            <section class="application-panel" aria-labelledby="application-title">
+                <h2 id="application-title">Membership Application</h2>
+                <p>Fields marked with an asterisk (*) are required.</p>
+
+                <form class="application-form" method="get" action="thankyou.html">
+                    <label class="form-field">
+                        First Name *
+                        <input type="text" id="first-name" name="first-name" title="Enter your first name"
+                            autocomplete="given-name" required>
+                    </label>
+
+                    <label class="form-field">
+                        Last Name *
+                        <input type="text" id="last-name" name="last-name" title="Enter your last name"
+                            autocomplete="family-name" required>
+                    </label>
+
+                    <label class="form-field">
+                        Organizational Title
+                        <input type="text" id="organization-title" name="organization-title"
+                            title="Enter at least seven letters, spaces, or hyphens"
+                            autocomplete="organization-title" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\- ]{7,}">
+                    </label>
+
+                    <label class="form-field">
+                        Email Address *
+                        <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email"
+                            placeholder="name@example.com" required>
+                    </label>
+
+                    <label class="form-field">
+                        Mobile Phone *
+                        <input type="tel" id="phone" name="phone" title="Enter your mobile phone number"
+                            autocomplete="tel" required>
+                    </label>
+
+                    <label class="form-field">
+                        Business or Organization Name *
+                        <input type="text" id="organization" name="organization"
+                            title="Enter your business or organization name" autocomplete="organization" required>
+                    </label>
+
+                    <fieldset class="membership-options">
+                        <legend>Membership Level *</legend>
+                        <label>
+                            <input type="radio" name="membership" value="np" title="Select NP Membership"
+                                autocomplete="off" required>
+                            NP Membership
+                        </label>
+                        <label>
+                            <input type="radio" name="membership" value="bronze" title="Select Bronze Membership"
+                                autocomplete="off">
+                            Bronze Membership
+                        </label>
+                        <label>
+                            <input type="radio" name="membership" value="silver" title="Select Silver Membership"
+                                autocomplete="off">
+                            Silver Membership
+                        </label>
+                        <label>
+                            <input type="radio" name="membership" value="gold" title="Select Gold Membership"
+                                autocomplete="off">
+                            Gold Membership
+                        </label>
+                    </fieldset>
+
+                    <label class="form-field">
+                        Organization Description
+                        <textarea id="description" name="description" title="Describe your organization"
+                            autocomplete="off" rows="5"></textarea>
+                    </label>
+
+                    <input type="hidden" id="timestamp" name="timestamp">
+                    <input class="submit-button" type="submit" value="Submit Application"
+                        aria-label="Submit membership application">
+                </form>
+            </section>
+
+            <section class="membership-section" aria-labelledby="membership-title">
+                <h2 id="membership-title">Membership Levels</h2>
+                <p>Explore the benefits available at each level.</p>
+
+                <div class="membership-cards">
+                    <article class="membership-card">
+                        <p class="membership-price">No Fee</p>
+                        <h3>NP Membership</h3>
+                        <p>Created for qualifying nonprofit organizations.</p>
+                        <button class="benefits-button" type="button" data-modal="np-modal">View Benefits</button>
+                    </article>
+
+                    <article class="membership-card">
+                        <p class="membership-price">Entry Level</p>
+                        <h3>Bronze Membership</h3>
+                        <p>Essential chamber access for growing organizations.</p>
+                        <button class="benefits-button" type="button" data-modal="bronze-modal">View Benefits</button>
+                    </article>
+
+                    <article class="membership-card">
+                        <p class="membership-price">Growth Level</p>
+                        <h3>Silver Membership</h3>
+                        <p>Greater visibility, training, and event discounts.</p>
+                        <button class="benefits-button" type="button" data-modal="silver-modal">View Benefits</button>
+                    </article>
+
+                    <article class="membership-card">
+                        <p class="membership-price">Premier Level</p>
+                        <h3>Gold Membership</h3>
+                        <p>Maximum promotion and leadership opportunities.</p>
+                        <button class="benefits-button" type="button" data-modal="gold-modal">View Benefits</button>
+                    </article>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <dialog id="np-modal" class="membership-modal" aria-labelledby="np-modal-title">
+        <div>
+            <button class="modal-close" type="button" aria-label="Close NP membership benefits">&times;</button>
+            <h2 id="np-modal-title">NP Membership Benefits</h2>
+            <ul>
+                <li>Free directory listing</li>
+                <li>Access to community networking events</li>
+                <li>Monthly chamber newsletter</li>
+                <li>Nonprofit resource referrals</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog id="bronze-modal" class="membership-modal" aria-labelledby="bronze-modal-title">
+        <div>
+            <button class="modal-close" type="button" aria-label="Close Bronze membership benefits">&times;</button>
+            <h2 id="bronze-modal-title">Bronze Membership Benefits</h2>
+            <ul>
+                <li>All NP membership benefits</li>
+                <li>Business directory listing</li>
+                <li>Member-rate training sessions</li>
+                <li>Invitations to chamber networking events</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog id="silver-modal" class="membership-modal" aria-labelledby="silver-modal-title">
+        <div>
+            <button class="modal-close" type="button" aria-label="Close Silver membership benefits">&times;</button>
+            <h2 id="silver-modal-title">Silver Membership Benefits</h2>
+            <ul>
+                <li>All Bronze membership benefits</li>
+                <li>Discounted event registration</li>
+                <li>Social media promotion</li>
+                <li>Priority access to business workshops</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog id="gold-modal" class="membership-modal" aria-labelledby="gold-modal-title">
+        <div>
+            <button class="modal-close" type="button" aria-label="Close Gold membership benefits">&times;</button>
+            <h2 id="gold-modal-title">Gold Membership Benefits</h2>
+            <ul>
+                <li>All Silver membership benefits</li>
+                <li>Homepage spotlight opportunities</li>
+                <li>Event sponsorship recognition</li>
+                <li>Premium advertising placement</li>
+            </ul>
+        </div>
+    </dialog>
 
     <footer>
         <div class="footer-contact">
