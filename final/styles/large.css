@@ -4,9 +4,10 @@
  * The numbers match the equivalent sections in small.css.
  */
 
-:root {
-    --space-xlarge: 6rem;
-}
+@media screen and (min-width: 768px) {
+    :root {
+        --space-xlarge: 6rem;
+    }
 
 .container {
     padding-inline: 2rem;
@@ -80,4 +81,5 @@ header ul {
 .page-hero {
     display: grid;
     align-items: center;
+}
 }

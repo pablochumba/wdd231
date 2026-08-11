@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore Get Better at Music experiences and personalized learning opportunities.">
-    <meta name="author" content="Get Better">
+    <meta name="author" content="Pablo Chumba">
+    <meta property="og:title" content="Build Your Music Skills with Get Better Classes">
+    <meta property="og:description" content="Explore practical music classes designed to strengthen your technique, confidence, creativity, and performance skills.">
+    <meta property="og:image" content="https://pablochumba.github.io/wdd231/final/images/favicon.svg">
+    <meta property="og:url" content="https://pablochumba.github.io/wdd231/final/music.html">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
-    <script type="module" src="scripts/music.js" defer></script>
+    <link rel="stylesheet" href="styles/large.css">
+    <script type="module" src="scripts/music.js"></script>
     <script src="scripts/theme.js" defer></script>
     <title>Get Better | Music</title>
 </head>
@@ -41,7 +45,7 @@
 
                 <div class="theme-switch">
                     <input type="checkbox" id="theme-toggle" aria-label="Toggle dark theme">
-                    <label for="theme-toggle" aria-hidden="true"></label>
+                    <label for="theme-toggle"></label>
                     <span class="theme-label">Dark Theme</span>
                 </div>
             </div>
@@ -58,7 +62,8 @@
         </section>
 
         <section class="container">
-            <div class="filter-bar" aria-label="Music filters">
+            <h2>Available music experiences</h2>
+            <div class="filter-bar">
                 <button class="filter-button active" type="button" data-filter="all">All</button>
                 <button class="filter-button" type="button" data-filter="Beginner">Beginner</button>
                 <button class="filter-button" type="button" data-filter="Intermediate">Intermediate</button>

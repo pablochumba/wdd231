@@ -119,20 +119,11 @@ h3 {
     padding-block: var(--space-large);
 }
 
-#booking {
-    padding-block: var(--space-xlarge);
-}
-
-#contact {
-    padding-block: var(--space-large);
-}
-
 footer {
     padding-block: var(--space-medium);
 }
 
-#home,
-#contact {
+:is(#home, #contact) {
     background-color: var(--color-surface-soft);
 }
 
@@ -200,8 +191,7 @@ header ul {
     gap: 0.5rem;
 }
 
-header,
-footer {
+:is(header, footer) {
     background-color: var(--color-header-background);
     color: var(--color-header-text);
 }
@@ -344,12 +334,7 @@ header a:focus-visible {
     border: 2px solid var(--color-heading);
 }
 
-.hero-card,
-.info-card,
-.step,
-form,
-.experience-card,
-.confirmation-card {
+:where(.hero-card, .info-card) {
     background-color: var(--color-surface);
     border: 2px solid var(--color-border);
     border-radius: 0.75rem;
@@ -370,8 +355,7 @@ section h2 {
     margin-top: 0;
 }
 
-.card-grid,
-.experience-grid {
+.card-grid {
     display: grid;
     gap: 1.5rem;
     margin-top: 1.5rem;
@@ -411,6 +395,10 @@ section h2 {
 }
 
 .experience-card {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
     display: grid;
     gap: 0.8rem;
 }
@@ -485,6 +473,9 @@ section h2 {
 }
 
 .experience-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
     margin-bottom: var(--space-large);
 }
 
@@ -493,6 +484,10 @@ section h2 {
 }
 
 .confirmation-card {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -520,6 +515,10 @@ section h2 {
 }
 
 form {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
     display: grid;
     gap: var(--space-small);
     width: 100%;
@@ -534,9 +533,7 @@ form {
     font-weight: 700;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-group :is(input, select, textarea) {
     width: 100%;
     padding: 0.8rem 0.9rem;
     border: 2px solid var(--color-border);
@@ -546,9 +543,7 @@ form {
     font: inherit;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.form-group :is(input, select, textarea):focus {
     border-color: var(--color-focus);
     outline: 3px solid var(--color-focus);
     outline-offset: 2px;
