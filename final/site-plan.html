@@ -11,25 +11,35 @@
     <meta property="og:description" content="Review the Get Better website plan, including its purpose, audience, visual identity, typography, and responsive layouts.">
     <meta property="og:image" content="https://pablochumba.github.io/wdd231/final/images/favicon.svg">
     <meta property="og:url" content="https://pablochumba.github.io/wdd231/final/site-plan.html">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <title>Get Better Site Plan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/site-plan.css">
+    <script src="scripts/theme.js" defer></script>
 </head>
 
 <body>
-    <header class="hero">
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html">Get Better</a>
+        </div>
+    </header>
+
+    <main>
+    <section class="hero">
         <div class="container">
             <p class="eyebrow">W05 Project</p>
             <h1>Get Better Site Plan</h1>
             <p class="hero-copy">Get Better is a fictional learning experience platform designed to introduce visitors
                 to practical growth opportunities in music, cooking, and future skill-based topics.</p>
         </div>
-    </header>
+    </section>
 
-    <main class="container">
+    <div class="container plan-content">
         <section class="card" aria-labelledby="site-name-title">
             <h2 id="site-name-title">1. Site Name</h2>
             <p><strong>Site Name:</strong> Get Better</p>
@@ -136,6 +146,7 @@
                 </figure>
             </div>
         </section>
+    </div>
     </main>
 
     <footer>

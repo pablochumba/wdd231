@@ -20,14 +20,21 @@ body {
     line-height: 1.6;
 }
 
-main {
-    display: grid;
-    gap: 1rem;
-}
-
 .container {
     width: min(100% - 2rem, 1000px);
     margin: 0 auto;
+}
+
+.site-header {
+    padding: 1rem 0;
+    background-color: var(--color-dark);
+}
+
+.site-header a {
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .hero {
@@ -61,7 +68,9 @@ h1 {
     font-size: 1.05rem;
 }
 
-main {
+.plan-content {
+    display: grid;
+    gap: 1rem;
     padding: 2rem 0 3rem;
 }
 
