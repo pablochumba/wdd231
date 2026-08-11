@@ -4,6 +4,14 @@
  * The numbers match the equivalent sections in small.css.
  */
 
+:root {
+    --space-xlarge: 6rem;
+}
+
+.container {
+    padding-inline: 2rem;
+}
+
 /* 5. Desktop header: the brand and actions share one row. */
 header .container {
     flex-direction: row;
@@ -22,13 +30,31 @@ header ul {
     gap: var(--space-small);
 }
 
+.nav-toggle {
+    display: none;
+}
+
+.main-nav {
+    display: block;
+}
+
 /* 5.1 Navigation and theme controls change from column to row. */
 .header-actions {
     flex-direction: row;
     align-items: center;
 }
 
-/* 6. Hero: larger typography makes use of the desktop space. */
+/* 6. Hero and layout improvements. */
+.hero-layout,
+.page-hero {
+    grid-template-columns: 1.3fr 0.7fr;
+}
+
+.form-layout {
+    grid-template-columns: 0.75fr 1.25fr;
+    align-items: start;
+}
+
 #home h1 {
     font-size: 4rem;
 }
@@ -37,7 +63,21 @@ header ul {
     font-size: 1.5rem;
 }
 
-/* 7. Steps: one mobile column becomes three equal columns. */
+.card-grid,
+.experience-grid,
 .steps-grid {
     grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-bar {
+    justify-content: flex-start;
+}
+
+.experience-card {
+    min-height: 100%;
+}
+
+.page-hero {
+    display: grid;
+    align-items: center;
 }

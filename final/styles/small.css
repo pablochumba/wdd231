@@ -21,6 +21,7 @@
     --color-header-background: #1e3d2f;
     --color-header-text: #f2b84b;
     --color-heading: #1e3d2f;
+    --color-eyebrow: #1e3d2f;
     --color-action: #f2b84b;
     --color-on-action: #1e3d2f;
     --color-action-hover: #e0a53a;
@@ -33,7 +34,7 @@
     --space-small: 1rem;
     --space-medium: 2rem;
     --space-large: 3rem;
-    --space-xlarge: 6rem;
+    --space-xlarge: 4rem;
 }
 
 /* 1.1 Dark theme: data-theme on <html> overrides only the colors. */
@@ -45,6 +46,7 @@
     --color-header-background: #11251d;
     --color-header-text: #f2b84b;
     --color-heading: #f2b84b;
+    --color-eyebrow: #f2b84b;
     --color-action: #f2b84b;
     --color-on-action: #11251d;
     --color-action-hover: #e0a53a;
@@ -157,6 +159,37 @@ header nav {
     align-self: flex-end;
 }
 
+.nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 2px solid currentColor;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--color-header-text);
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    margin-inline: auto;
+    background: currentColor;
+    border-radius: 999px;
+}
+
+.main-nav {
+    display: none;
+}
+
+.header-actions.is-open .main-nav {
+    display: block;
+}
+
 header ul {
     margin: 0;
     padding: 0;
@@ -178,6 +211,10 @@ header nav a {
     padding: 0.5rem;
     color: inherit;
     text-decoration: none;
+}
+
+header nav a[aria-current="page"] {
+    border-bottom: 2px solid currentColor;
 }
 
 .nav-cta {
@@ -213,39 +250,68 @@ header a:focus-visible {
     gap: var(--space-small);
 }
 
-/* 5.2 Button theme control: currentColor reuses the text color. */
-.theme-button {
-    padding: 0.5rem 0.75rem;
-    border: 2px solid currentColor;
-    border-radius: 0.25rem;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 700;
-    background-color: transparent;
-    color: inherit;
-    cursor: pointer;
-}
-
-.theme-button:hover {
-    background-color: var(--color-header-text);
-    color: var(--color-header-background);
-}
-
-.theme-button:focus-visible {
-    outline: 3px solid var(--color-focus);
-    outline-offset: 3px;
-}
-
-/* 5.3 Checkbox theme control: it will later become a visual switch. */
+/* 5.2 Checkbox theme control: a visible switch with clear state changes. */
 .theme-switch {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+}
+
+.theme-switch input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.theme-switch label {
+    position: relative;
+    display: inline-block;
+    width: 3.25rem;
+    height: 1.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-switch label::before {
+    content: "";
+    position: absolute;
+    top: 0.15rem;
+    left: 0.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.theme-switch input:checked + label {
+    background: rgba(242, 184, 75, 0.25);
+}
+
+.theme-switch input:checked + label::before {
+    transform: translateX(1.35rem);
+}
+
+.theme-label {
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 /* 6. Hero: limits reading width and creates typographic hierarchy. */
 .hero-content {
     max-width: 40rem;
+}
+
+.eyebrow {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16rem;
+    text-transform: uppercase;
+    color: var(--color-eyebrow);
 }
 
 #home h1 {
@@ -259,33 +325,204 @@ header a:focus-visible {
     font-size: 1.25rem;
 }
 
-/* 7. Steps: one mobile column; large.css changes the grid to three columns. */
-.steps-grid {
+.hero-layout {
     display: grid;
-    gap: var(--space-medium);
+    gap: 2rem;
+    align-items: center;
 }
 
-.step {
-    padding: var(--space-medium);
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--color-heading);
+    border: 2px solid var(--color-heading);
+}
+
+.hero-card,
+.info-card,
+.step,
+form,
+.experience-card,
+.confirmation-card {
     background-color: var(--color-surface);
     border: 2px solid var(--color-border);
-    border-radius: 0.25rem;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
 }
 
-.step h3 {
-    margin-block: 0 var(--space-small);
-    color: var(--color-heading);
+section h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
 }
 
-.step p {
+.experience-card h3 {
     margin: 0;
 }
 
-/* 8. Form: vertical groups, consistent controls, and visible focus. */
+.info-card h3,
+.hero-card h2 {
+    margin-top: 0;
+}
+
+.card-grid,
+.experience-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-card a {
+    color: var(--color-heading);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.info-card a:hover {
+    text-decoration: underline;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.filter-button {
+    background-color: transparent;
+    border: 2px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    font: inherit;
+    font-weight: 700;
+    color: var(--color-heading);
+    cursor: pointer;
+}
+
+.filter-button.active {
+    background-color: var(--color-action);
+    color: var(--color-on-action);
+}
+
+.experience-card {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.experience-card ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-category {
+    margin: 0;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--color-heading);
+}
+
+.detail-button {
+    border: none;
+    background: var(--color-action);
+    color: var(--color-on-action);
+    border-radius: 0.4rem;
+    padding: 0.55rem 0.8rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    border: 2px dashed var(--color-border);
+    border-radius: 0.75rem;
+    background: rgba(255,255,255,0.3);
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#close-dialog {
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#experience-dialog {
+    border: 2px solid var(--color-border);
+    border-radius: 1rem;
+    max-width: 34rem;
+    width: min(90vw, 34rem);
+    padding: 1.5rem;
+}
+
+#experience-dialog::backdrop {
+    background: rgba(17, 37, 29, 0.6);
+}
+
+.page-hero {
+    padding-block: var(--space-xlarge);
+    background-color: var(--color-surface-soft);
+}
+
+.experience-grid {
+    margin-bottom: var(--space-large);
+}
+
+.confirmation-section {
+    padding-block: var(--space-xlarge);
+}
+
+.confirmation-card {
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-card ul {
+    margin: 1rem 0 0;
+    padding-left: 1.2rem;
+}
+
+#featured,
+#booking,
+#contact {
+    padding-block: var(--space-large);
+}
+
+.form-layout {
+    display: grid;
+    gap: 2rem;
+}
+
+.booking-benefits {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding-left: 1.25rem;
+}
+
 form {
     display: grid;
     gap: var(--space-small);
-    max-width: 40rem;
+    width: 100%;
 }
 
 .form-group {
@@ -301,13 +538,12 @@ form {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem;
-    border: 2px solid transparent;
-    border-radius: 0.25rem;
-    font-family: inherit;
-    font-size: 1rem;
-    color: var(--color-text);
+    padding: 0.8rem 0.9rem;
+    border: 2px solid var(--color-border);
+    border-radius: 0.5rem;
     background-color: var(--color-field-background);
+    color: var(--color-text);
+    font: inherit;
 }
 
 .form-group input:focus,
@@ -320,4 +556,39 @@ form {
 
 .form-group textarea {
     resize: vertical;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-inner a {
+    color: var(--color-header-text);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* 7. Steps: one mobile column; large.css changes the grid to three columns. */
+.steps-grid {
+    display: grid;
+    gap: var(--space-medium);
+}
+
+.step {
+    padding: 1.5rem;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 0.25rem;
+}
+
+.step h3 {
+    margin-block: 0 var(--space-small);
+    color: var(--color-heading);
+}
+
+.step p {
+    margin: 0;
 }

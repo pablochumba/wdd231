@@ -2,154 +2,170 @@
 <html lang="en">
 
 <head>
-    <!-- Essential metadata: character encoding, responsive viewport, description, and author. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Get Better at Guitar with personalized lessons. Learn from an experienced instructor and improve your skills.">
+        content="Get Better helps you discover practical learning experiences in music, cooking, and creative skill-building.">
     <meta name="author" content="Get Better">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
-    <!-- Google Fonts: preconnect reduces some of the wait before downloading the fonts. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS order: normalization, mobile-first base, and adjustments from 768px. -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
-
-    <!-- defer runs JavaScript after the browser parses the HTML. -->
     <script src="scripts/theme.js" defer></script>
-    <title>Get Better</title>
+    <title>Get Better | Home</title>
 </head>
 
 <body>
-
-    <!-- Header: site identity, primary navigation, and visual preferences. -->
     <header>
-        <div class="container">
-            <a class="site-name" href="#home">Get better</a>
+        <div class="container header-inner">
+            <a class="site-name" href="index.html">Get Better</a>
 
             <div class="header-actions">
-                <!-- Internal href values must match an existing id on the page. -->
-                <nav>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav id="main-nav" class="main-nav" aria-label="Main navigation">
                     <ul>
-                        <li><a href="#lessons">Lessons</a></li>
-                        <li><a href="#instructor">About Me</a></li>
-                        <li><a href="#booking">How It Works</a></li>
-                        <li><a class="nav-cta" href="#contact">Book a Lesson</a></li>
+                        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                        <li><a href="music.html">Music</a></li>
+                        <li><a href="cooking.html">Cooking</a></li>
+                        <li><a class="nav-cta" href="#contact">Book a Session</a></li>
                     </ul>
                 </nav>
 
-                <!--
-                    Learning comparison: the button uses click + aria-pressed;
-                    the checkbox uses change + checked. Production sites normally use one.
-                -->
-                <button class="theme-button" type="button" aria-pressed="false">
-                    Dark Theme
-                </button>
-
                 <div class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <label for="theme-toggle">Dark Theme</label>
+                    <input type="checkbox" id="theme-toggle" aria-label="Toggle dark theme">
+                    <label for="theme-toggle" aria-hidden="true"></label>
+                    <span class="theme-label">Dark Theme</span>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero: contains the only h1 and the primary call to action. -->
         <section id="home">
-            <div class="container">
+            <div class="container hero-layout">
                 <div class="hero-content">
-                    <h1>Welcome</h1>
-                    <p>Are you ready to "Get Better" at Guitar?</p>
-                    <a class="button" href="#contact">Get Started</a>
+                    <p class="eyebrow">Explore. Learn. Improve.</p>
+                    <h1>Find your next great learning experience.</h1>
+                    <p>Get Better connects curious people with practical, creative, and confidence-building experiences in music, cooking, and lifelong skill development.</p>
+                    <div class="hero-actions">
+                        <a class="button" href="music.html">Explore Programs</a>
+                        <a class="button button-secondary" href="#contact">Join a Class</a>
+                    </div>
+                </div>
+                <div class="hero-card">
+                    <h2>Featured Focus</h2>
+                    <p>Personalized learning experiences designed to help you build confidence, consistency, and creativity.</p>
+                    <ul>
+                        <li>Beginner-friendly guidance</li>
+                        <li>Skill-based classes</li>
+                        <li>Flexible weekly sessions</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- Topic section identified for internal navigation. -->
-        <section id="instructor">
+        <section id="featured">
             <div class="container">
-                <h2>Instructor</h2>
-                <p>Introduction. Experience.</p>
+                <h2>Choose your path</h2>
+                <div class="card-grid">
+                    <article class="info-card">
+                        <h3>Get Better at Music</h3>
+                        <p>Develop rhythm, confidence, and technique through guided practice and personalized coaching.</p>
+                        <a href="music.html">Learn more</a>
+                    </article>
+                    <article class="info-card">
+                        <h3>Get Better at Cooking</h3>
+                        <p>Build practical kitchen skills, improve flavor, and enjoy hands-on learning in a relaxed environment.</p>
+                        <a href="cooking.html">Learn more</a>
+                    </article>
+                    <article class="info-card">
+                        <h3>Future Pathways</h3>
+                        <p>Languages, creative workshops, and mentor-led experiences are part of the next chapter of Get Better.</p>
+                        <a href="#contact">Stay updated</a>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- Topic section identified for internal navigation. -->
-        <section id="lessons">
-            <div class="container">
-                <h2>My Lessons</h2>
-                <p>Lessons for all skill levels.</p>
-            </div>
-        </section>
-
-        <!-- Process: .steps-grid controls the layout and each .step represents a card. -->
         <section id="booking">
             <div class="container">
-                <h2>Book Your Lesson</h2>
+                <h2>How it works</h2>
                 <div class="steps-grid">
                     <div class="step">
-                        <h3>Step 1: Choose Your Lesson and Schedule</h3>
-                        <p>Choose between individual or group lessons.</p>
+                        <h3>Step 1: Pick a focus</h3>
+                        <p>Choose the experience that best matches your goals and interests.</p>
                     </div>
-
                     <div class="step">
-                        <h3>Step 2: Tell Me About Yourself</h3>
-                        <p>Enter your contact information.</p>
+                        <h3>Step 2: Share your goals</h3>
+                        <p>Tell us about your pace, preferences, and what you want to improve.</p>
                     </div>
-
                     <div class="step">
-                        <h3>Step 3: Confirm Your Booking</h3>
-                        <p>Review the details and confirm your booking.</p>
+                        <h3>Step 3: Start learning</h3>
+                        <p>Receive a personalized plan and begin your next learning experience.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Form: each label connects to the control whose id matches its for attribute. -->
         <section id="contact">
-            <div class="container">
-                <h2>Book a Lesson</h2>
-                <form>
+            <div class="container form-layout">
+                <div class="booking-intro">
+                    <h2>Book a session</h2>
+                    <p>Tell us what you want to learn and we will help you choose the right experience.</p>
+                    <ul class="booking-benefits">
+                        <li>Tell us your learning goals.</li>
+                        <li>Receive a personalized recommendation.</li>
+                        <li>Choose a schedule that works for you.</li>
+                    </ul>
+                </div>
+
+                <form action="confirmation.html" method="get">
                     <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email:</label>
+                        <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="lesson-type">Lesson Type:</label>
-                        <select id="lesson-type" name="lesson-type" required>
-                            <option value="" disabled selected>Select a lesson type</option>
-                            <option value="individual">Individual Lesson</option>
-                            <option value="group">Group Lesson</option>
+                        <label for="interest">Interest</label>
+                        <select id="interest" name="interest" required>
+                            <option value="" disabled selected>Select an experience</option>
+                            <option value="music">Music</option>
+                            <option value="cooking">Cooking</option>
+                            <option value="general">General learning</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="goals">Your Goals:</label>
-                        <textarea id="goals" name="goals" rows="4" required
-                            placeholder="Tell me what you would like to learn..."></textarea>
+                        <label for="goals">What would you like to improve?</label>
+                        <textarea id="goals" name="goals" rows="4" placeholder="Tell us about your goals..." required></textarea>
                     </div>
 
-                    <button class="button" type="submit">Book a Lesson</button>
+                    <button class="button" type="submit">Send request</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer outside main: closing information that belongs to the entire site. -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Get Better. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Get Better</p>
+            <a href="site-plan.html">Site Plan</a>
         </div>
     </footer>
 </body>

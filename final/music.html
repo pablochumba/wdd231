@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Get Better at Music experiences and personalized learning opportunities.">
+    <meta name="author" content="Get Better">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css" media="screen and (min-width: 768px)">
+    <script type="module" src="scripts/music.js" defer></script>
+    <script src="scripts/theme.js" defer></script>
+    <title>Get Better | Music</title>
+</head>
+
+<body>
+    <header>
+        <div class="container header-inner">
+            <a class="site-name" href="index.html">Get Better</a>
+
+            <div class="header-actions">
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="music.html" class="active" aria-current="page">Music</a></li>
+                        <li><a href="cooking.html">Cooking</a></li>
+                        <li><a class="nav-cta" href="index.html#contact">Book a Session</a></li>
+                    </ul>
+                </nav>
+
+                <div class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" aria-label="Toggle dark theme">
+                    <label for="theme-toggle" aria-hidden="true"></label>
+                    <span class="theme-label">Dark Theme</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">Get Better at Music</p>
+                <h1>Build rhythm, confidence, and joy.</h1>
+                <p>Explore practical music experiences designed to help you improve through guided practice and creative growth.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="filter-bar" aria-label="Music filters">
+                <button class="filter-button active" type="button" data-filter="all">All</button>
+                <button class="filter-button" type="button" data-filter="Beginner">Beginner</button>
+                <button class="filter-button" type="button" data-filter="Intermediate">Intermediate</button>
+                <button class="filter-button" type="button" data-filter="All levels">All levels</button>
+            </div>
+            <div id="music-list" class="experience-grid"></div>
+        </section>
+    </main>
+
+    <dialog id="experience-dialog">
+        <div class="dialog-header">
+            <h2 data-role="title">Experience</h2>
+            <button id="close-dialog" type="button" aria-label="Close dialog">×</button>
+        </div>
+        <div class="dialog-body">
+            <p data-role="category"></p>
+            <p data-role="instructor"></p>
+            <p data-role="focus"></p>
+            <p data-role="schedule"></p>
+            <p data-role="level"></p>
+            <p data-role="price"></p>
+            <p data-role="description"></p>
+        </div>
+    </dialog>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Get Better</p>
+            <a href="site-plan.html">Site Plan</a>
+        </div>
+    </footer>
+</body>
+
+</html>
