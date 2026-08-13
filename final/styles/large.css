@@ -9,6 +9,10 @@
         --space-xlarge: 6rem;
     }
 
+    .footer-inner p {
+        flex-basis: auto;
+    }
+
 .container {
     padding-inline: 2rem;
 }

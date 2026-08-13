@@ -147,6 +147,11 @@ footer {
     text-align: center;
 }
 
+footer a {
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
 @media (min-width: 768px) {
     .wireframe-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
